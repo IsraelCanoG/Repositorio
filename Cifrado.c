@@ -38,6 +38,5 @@ int main(){
 
 	printf("\tMensaje cifrado: %s\n\t\t========================================\n\n", mensaje);
 	//printf("%d\n", numero);
-	
-return 0;
+	return 0;
 }
