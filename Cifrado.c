@@ -24,3 +24,20 @@ char *cifrar(char *mensaje,int n){
     return mensaje;
 }
 
+
+int main(){
+	char mensaje[100];
+	int numero;
+
+	printf("\n\t\t========================================\n\n\tIngrese mensaje a cifrar: ");
+	fgets(mensaje,100,stdin);
+	printf("\tIngrese la llave numerica: ");
+	scanf("%d", &numero);
+
+	*cifrar(mensaje,numero);
+
+	printf("\tMensaje cifrado: %s\n\t\t========================================\n\n", mensaje);
+	//printf("%d\n", numero);
+	
+return 0;
+}
