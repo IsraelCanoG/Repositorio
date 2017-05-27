@@ -2,7 +2,7 @@
 #include <string.h>
 #include <math.h>
 #include <stdio.h>
-
+#include <stdlib.h>
 char *cifrar(char *mensaje,int n){
     int i,j;
     for(i=0;i<strlen(mensaje);i++){
@@ -27,7 +27,8 @@ char *cifrar(char *mensaje,int n){
 
 int main(int argc, char * argv[]){
 	char mensaje[100];
-	int numero=argc;
+	int numero=strtol(argv[1], NULL, 10);
+	//int numero=(int)argv[1];
 
 	//printf("\n\t\t========================================\n\n\tIngrese mensaje a cifrar: ");
 	//fgets(mensaje,100,stdin);
@@ -36,7 +37,7 @@ int main(int argc, char * argv[]){
 
 	*cifrar(argv[2],numero);
 
-	printf("\tMensaje cifrado: %s\n\t\t========================================\n\n", argv[2]);
+	printf("\tMensaje cifrado: %s\n\t\t========================================\n\n",argv[2]);
 	//printf("%d\n", valor);
 	
 return 0;
