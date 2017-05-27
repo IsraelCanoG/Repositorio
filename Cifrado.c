@@ -46,7 +46,6 @@ char *cifrarMorse(char *mensaje){
 	return mensaje;
 }
 
-
 int main(int argc, char * argv[]){
 	int numero;
 	if(argc==1){
