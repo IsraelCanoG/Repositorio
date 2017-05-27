@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
@@ -48,16 +49,20 @@ char *cifrarMorse(char *mensaje){
 
 int main(int argc, char * argv[]){
 	int numero;
-	if(argc<3 || argc >3){
+	if(argc!=3){
 		printf("\n\t\t========================================\n\n\tIngrese mensaje a cifrar: ");
-		fgets(argv[1],100,stdin);
+		fgets(argv[0],100,stdin);
 		printf("\tIngrese la llave numerica: ");
-		scanf("%d", &numero);
-		*cifrar(argv[1],numero);
-		printf("\tMensaje cifrado: %s",argv[1]);
-        	printf("\tMensaje cifrado en morse: ");
-        	*cifrarMorse(argv[1]);
-        	printf("\n\n\t\t========================================\n\n");
+		//scanf("%d", &numero);
+		if(!scanf("%d", &numero)){
+			printf("\n\t\t****Error, llave numerica incorrecta, cerrando programa...****\n\n");
+		}else{
+			*cifrar(argv[0],numero);
+			printf("\tMensaje cifrado: %s",argv[0]);
+        		printf("\tMensaje cifrado en morse: ");
+        		*cifrarMorse(argv[0]);
+        		printf("\n\n\t\t========================================\n\n");
+		}
 	}else if(argc==3){
 		printf("\n\t\t========================================\n\n");
                 numero=strtol(argv[1], NULL, 10);
@@ -66,9 +71,6 @@ int main(int argc, char * argv[]){
         	printf("\tMensaje cifrado en morse: ");
         	*cifrarMorse(argv[2]);
         	printf("\n\n\t\t========================================\n\n");
-	}else{
-		printf("\n\t\t========================================\n\n");
-		numero=strtol(argv[1], NULL, 10);
 	}
 return 0;
 }
