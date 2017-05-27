@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <stdio.h>
 
 char *cifrar(char *mensaje,int n){
     int i,j;
@@ -24,20 +25,19 @@ char *cifrar(char *mensaje,int n){
     return mensaje;
 }
 
-
-int main(){
+int main(int argc, char * argv[]){
 	char mensaje[100];
-	int numero;
+	int numero=argc;
 
-	printf("\n\t\t========================================\n\n\tIngrese mensaje a cifrar: ");
-	fgets(mensaje,100,stdin);
-	printf("\tIngrese la llave numerica: ");
-	scanf("%d", &numero);
+	//printf("\n\t\t========================================\n\n\tIngrese mensaje a cifrar: ");
+	//fgets(mensaje,100,stdin);
+	//printf("\tIngrese la llave numerica: ");
+	//scanf("%d", &numero);
 
-	*cifrar(mensaje,numero);
+	*cifrar(argv[2],numero);
 
-	printf("\tMensaje cifrado: %s\n\t\t========================================\n\n", mensaje);
-	//printf("%d\n", numero);
+	printf("\tMensaje cifrado: %s\n\t\t========================================\n\n", argv[2]);
+	//printf("%d\n", valor);
 	
 return 0;
 }
