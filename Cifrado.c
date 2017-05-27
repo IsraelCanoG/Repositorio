@@ -26,19 +26,20 @@ char *cifrar(char *mensaje,int n){
 }
 
 int main(int argc, char * argv[]){
-	char mensaje[100];
-	int numero=strtol(argv[1], NULL, 10);
-	//int numero=(int)argv[1];
-
-	//printf("\n\t\t========================================\n\n\tIngrese mensaje a cifrar: ");
-	//fgets(mensaje,100,stdin);
-	//printf("\tIngrese la llave numerica: ");
-	//scanf("%d", &numero);
-
+	int numero;
+	if(argc==1){
+		printf("\n\t\t========================================\n\n\tIngrese mensaje a cifrar: ");
+		fgets(argv[2],100,stdin);
+		printf("\tIngrese la llave numerica: ");
+		scanf("%d", &numero);
+	}else{
+		printf("\n\t\t========================================\n\n");
+		numero=strtol(argv[1], NULL, 10);
+	}
 	*cifrar(argv[2],numero);
 
-	printf("\tMensaje cifrado: %s\n\t\t========================================\n\n",argv[2]);
+	printf("\tMensaje cifrado: %s\n\n\t\t========================================\n\n",argv[2]);
 	//printf("%d\n", valor);
-	
+
 return 0;
 }
